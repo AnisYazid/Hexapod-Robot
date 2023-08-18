@@ -2,10 +2,10 @@
 Full project of an Hexapod Robot using Jetson Nano developer Kit.
 
 # usage 
-main purpose of the project is to detect people under rubble in hard situation,I named it Aquilla.
+Main purpose of the project is to detect people under rubble in hard situation,I named it Aquilla.
 
 # component
-the Robot use the folowwing modules:
+The Robot use the folowwing modules:
 
 ## Controller 
 Nvidia Jetson Nano Devloper Kit 4GB.
