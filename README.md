@@ -20,4 +20,4 @@ Camera Go pro.
 Youyeetoo D300 Lidar Scanner Kit with Adapter, 12 Meters (39 Feet) 360° Range.
 
 ## Power
-1 x Lipo batterie 11.1V 4 cell.
+1 x Lipo batterie 14.8V 4 cell.
