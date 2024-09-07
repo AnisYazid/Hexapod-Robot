@@ -43,12 +43,19 @@ This project involves the design and development of a hexapod robot equipped wit
 
 ## Features
 - **Dual PCA9685 Control:** Two PCA9685 drivers allow for precise control of 18 HS-475HB servos, with separate management for the left and right sides of the hexapod.
+
 - **Smooth Movement:** Utilizes Bézier curves to generate smooth trajectories for the hexapod's movements, enhancing agility and fluidity.
+
 - **PID Control:** Implements PID control for precise servo positioning, allowing for accurate and stable movement adjustments.
+  
 - **Real-Time Calibration:** Uses MPU6050 for detecting orientation and adjusting the robot's posture on-the-fly.
+  
 - **Autonomous Navigation:** Implements SLAM (Simultaneous Localization and Mapping) algorithms for navigating complex environments.
+  
 - **Obstacle Detection:** Utilizes Kinect V2 for depth perception and real-time obstacle avoidance.
+  
 - **Debugging Tools:** Buzzer for alerts and LEDs for indicating status (e.g., errors, operational states).
+  
 - **Remote Control Mode:** Allows manual operation via Radiolink AT10 transmitter.
 
 ## Installation
@@ -71,8 +78,10 @@ This project involves the design and development of a hexapod robot equipped wit
   - Radiolink RD12DS receiver
   - Power supply
  
-  ##Future Work
+## Future Work
   - **Advanced Sensor Integration:** Explore additional algorithms for obstacle avoidance and pathfinding
+  
   - **Machine Learning:** Implement machine learning techniques for better decision-making and adaptive behaviors based on the robot's experiences.
+    
   - **Battery Management System:** Develop a battery management system to monitor battery levels and optimize power consumption during operation.
   
