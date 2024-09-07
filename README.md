@@ -100,14 +100,6 @@ This project involves the design and development of a hexapod robot equipped wit
    
 2. Install ROS (Robot Operating System) following: [official ROS installation instructions](http://wiki.ros.org/ROS/Installation).
    
-## Future Work
-  - **Advanced Sensor Integration:** Explore additional algorithms for obstacle avoidance and pathfinding
-  
-  - **Machine Learning:** Implement machine learning techniques for better decision-making and adaptive behaviors based on the robot's experiences.
-    
-  - **Battery Management System:** Develop a battery management system to monitor battery levels and optimize power consumption during operation.
-
-
 ## Pinout
 
 ### ESP32 Connections
@@ -159,6 +151,13 @@ This project involves the design and development of a hexapod robot equipped wit
 - Monitor battery levels to ensure adequate power for all components.
 - Check the battery connections for any loose or corroded terminals.
 - Consider using a battery management system to prevent over-discharge and optimize performance.
+
+## Future Work
+  - **Advanced Sensor Integration:** Explore additional algorithms for obstacle avoidance and pathfinding
+  
+  - **Machine Learning:** Implement machine learning techniques for better decision-making and adaptive behaviors based on the robot's experiences.
+    
+  - **Battery Management System:** Develop a battery management system to monitor battery levels and optimize power consumption during operation.
 
 ## References
 - **PCA9685 Library:** [Adafruit PWM Servo Driver Library](https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library)
