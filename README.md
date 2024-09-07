@@ -61,6 +61,7 @@ This project involves the design and development of a hexapod robot equipped wit
 ## Installation
 ### Prerequisites
 - **Hardware:**
+
   - ESP32 development board
   - 2 x PCA9685 servo drivers
   - 18 x HS-475HB servo motors
@@ -78,10 +79,94 @@ This project involves the design and development of a hexapod robot equipped wit
   - Radiolink RD12DS receiver
   - Power supply
  
+- **Software:**
+
+   ```bash
+   git clone https://github.com/yourusername/hexapod-robot.git
+   cd hexapod-robot
+   
+### Install ESP32 Libraries
+1. Open the Arduino IDE.
+2. Go to **Sketch > Include Library > Manage Libraries**.
+3. Search for and install:
+   - Adafruit PWM Servo Driver Library
+   - MPU6050 library
+   - PID library (if necessary for your implementation)
+
+### Install Jetson Nano Libraries
+1. Open a terminal and install OpenCV:
+   ```bash
+   sudo apt-get install python3-opencv
+   
+2. Install ROS (Robot Operating System) following: [official ROS installation instructions](http://wiki.ros.org/ROS/Installation).
+   
 ## Future Work
   - **Advanced Sensor Integration:** Explore additional algorithms for obstacle avoidance and pathfinding
   
   - **Machine Learning:** Implement machine learning techniques for better decision-making and adaptive behaviors based on the robot's experiences.
     
   - **Battery Management System:** Develop a battery management system to monitor battery levels and optimize power consumption during operation.
+
+
+## Pinout
+
+### ESP32 Connections
+- **PCA9685 Servo Driver 1:**
+  - SDA: GPIO 21
+  - SCL: GPIO 22
+
+- **PCA9685 Servo Driver 2:**
+  - SDA: GPIO 21
+  - SCL: GPIO 22
+  - (Note: Both drivers share the same SDA and SCL pins)
+
+- **MPU6050:**
+  - SDA: GPIO 21
+  - SCL: GPIO 22
+  - (Note: The MPU6050 also shares the same I2C pins)
+
+- **LEDs:**
+  - Red LED: GPIO 25
+  - Blue LED: GPIO 26
+  - Green LED: GPIO 27
+
+- **Buzzer:**
+  - Buzzer: GPIO 23
+ 
+## Troubleshooting
+### Common Issues
+
+#### Servo Not Responding:
+- Check the power supply to ensure the servos are receiving adequate voltage.
+- Verify the wiring connections to the PCA9685 and ESP32.
+- Ensure the correct I2C address is being used in the code.
+- Inspect the servo motors for physical damage or mechanical binding.
+- Test individual servos to confirm they are operational by connecting them directly to a power source.
+
+#### Inconsistent Movement:
+- Make sure the PID parameters are properly tuned for the specific movement requirements.
+- Check the calibration of the MPU6050 to ensure accurate orientation readings.
+- Monitor the servo feedback to ensure they are reaching the desired positions.
+- Adjust the movement commands to ensure they are not exceeding the servo's capabilities.
+
+#### LEDs Not Lighting Up:
+- Confirm that the LEDs are wired correctly and that the appropriate pins are defined in the code.
+- Check for any potential shorts or incorrect resistor values.
+- Verify that the code includes logic to turn on the LEDs in the correct conditions.
+- Test the LEDs individually to ensure they are functional.
+
+#### Battery Issues:
+- Monitor battery levels to ensure adequate power for all components.
+- Check the battery connections for any loose or corroded terminals.
+- Consider using a battery management system to prevent over-discharge and optimize performance.
+
+## References
+- **PCA9685 Library:** [Adafruit PWM Servo Driver Library](https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library)
   
+- **MPU6050 Library:** [MPU6050 Library for Arduino](https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/MPU6050)
+  
+- **PID Control:** [PID Controller Basics](https://en.wikipedia.org/wiki/PID_controller)
+  
+- **Bézier Curves:** [Understanding Bézier Curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)
+
+- - **NVIDIA Jetson Nano Installation:** [Jetson Nano Setup Guide](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit)
