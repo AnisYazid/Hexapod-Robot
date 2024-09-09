@@ -119,8 +119,8 @@ This project involves the design and development of a hexapod robot equipped wit
 
 - **LEDs:**
   - Red LED: GPIO 25
-  - Blue LED: GPIO 26
-  - Green LED: GPIO 27
+  - Blue LED: GPIO 4
+  - Green LED: GPIO 2
 
 - **Buzzer:**
   - Buzzer: GPIO 23
