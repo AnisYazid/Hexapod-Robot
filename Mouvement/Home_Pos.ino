@@ -63,17 +63,20 @@ void home()
   pwmRight.setPWM(6, 0, servoAngleToPWM(standingPositionsRight[6])); // Right rear leg - Servo 1
   pwmRight.setPWM(7, 0, servoAngleToPWM(standingPositionsRight[7])); // Right rear leg - Servo 2
   pwmRight.setPWM(8, 0, servoAngleToPWM(standingPositionsRight[8])); // Right rear leg - Servo 3*/
-  for(int i=0; i<NUM_SERVOS_PER_SIDE; i++){
+  for(int i=0; i<NUM_SERVOS_PER_SIDE; i++)
+  {
     pwmLeft.setPWM(i,0, servoAngleoPWM(standingPositionLeft[i]));
      pwmRight.setPWM(i,0, servoAngleoPWM(standingPositionRight[i]));
 
+  }
 }
 
 
 void setServoPosition(float t)
 { 
 float easeValue=easeOutCubic(t);
-for (int i=0;i<NUM_SERVOS_PER_SIDE;i++){
+for (int i=0;i<NUM_SERVOS_PER_SIDE;i++)
+{
   
 /*int angleLeft=standingPositionLeft[i]+(int)((200-standingPositionLeft[i])*easeValue);
 int angleRight=standingPositionRight[i]+(int)((200-standingPositionRight[i])*easeValue);
@@ -89,6 +92,7 @@ pwmRight.setPWM(i,0, servoAngleToPWM(angleRight);*/
     pwmRight.setPWM(i,0, pwmPosition);
   }
     
+}
 }
 
 
