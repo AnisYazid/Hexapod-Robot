@@ -7,7 +7,7 @@ using bfs::SbusData;  // Bring SbusData into the current scope
 const int8_t RX_PIN = 16; // Replace with your actual RX pin
 
 /* SBUS object for reading SBUS */
-SbusRx sbus_rx(&Serial2, RX_PIN, -1, false, false); // TX pin not used
+SbusRx sbus_rx(&Serial2, RX_PIN, -1, true, false); // TX pin not used
 /* SBUS data structure */
 SbusData data;
 
@@ -15,7 +15,6 @@ void setup()
 {
   /* Serial to display data */
   Serial.begin(115200);
-  while (!Serial) {} // Wait for serial to connect
 
   /* Begin the SBUS communication */
   sbus_rx.Begin(); // Initialize SBUS receiver
