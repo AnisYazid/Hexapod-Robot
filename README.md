@@ -6,7 +6,8 @@ This project involves the design and development of a hexapod robot equipped wit
 ## Components
 - **Microcontroller:** ESP32
 - **Servo Drivers:** 2 x PCA9685 (one for the left side, one for the right side)
-  - **Right PCA9685 Address Modification:** A0 pin soldered to change the I2C address
+  - **Right PCA9685 Address Modification: 0x41 ** A0 pin soldered to change the I2C address ( E-D-F )
+  - **Left PCA9685 Address Modification: 0x42 ** A1 pin soldered to change the I2C address ( A-B-C )
 - **Servo Motors:** 18 x HS-475HB
 - **Orientation Sensor:** MPU6050 
 - **Processing Unit:** Jetson Nano (for advanced processing and AI capabilities)
