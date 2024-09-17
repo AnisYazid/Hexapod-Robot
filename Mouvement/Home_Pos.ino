@@ -3,8 +3,8 @@
 #include <math.h>
 
 // Create PCA9685 objects for left and right sides
-Adafruit_PCA9685 pwmLeft = Adafruit_PCA9685();
-Adafruit_PCA9685 pwmRight = Adafruit_PCA9685();
+Adafruit_PCA9685 pwmLeft = Adafruit_PCA9685(0x42);
+Adafruit_PCA9685 pwmRight = Adafruit_PCA9685(0x41);
 
 // Define constants
 const int NUM_SERVOS_PER_SIDE = 9; // 3 legs * 3 servos each
@@ -72,9 +72,9 @@ void home()
 }
 
 
-void setServoPosition(float t)
+void setServoPosition(float angle)
 { 
-float easeValue=easeOutCubic(t);
+float easeValue=easeOutCubic(angle);
 for (int i=0;i<NUM_SERVOS_PER_SIDE;i++)
 {
   
@@ -84,7 +84,7 @@ pwmLeft.setPWM(i,0, servoAngleToPWM(angleLeft);
 pwmRight.setPWM(i,0, servoAngleToPWM(angleRight);*/
   
   //apply easing function
-  int pwmPosition= map(easeValue, 0, 1, SERVOMIN, SERVOMAX); 
+  int pwmPosition= map(easeValue, 0, 200, SERVOMIN, SERVOMAX); 
   for(int i=0;i<NUM_SERVOS_PER_SIDE;i++){
     pwmLeft.setPWM(i,0, pwmPosition);
   }
@@ -112,16 +112,16 @@ void loop()
 {
   //easing motion from 0 to 1
   // 0 for the starting transition and 1 for the end 
-   for(float t=0;t<=1;t+=0.01)
+   for(float angle=0;angle<=1;angle+=1)
      {
-       setSeroPosition(t);
-       delay();
+       setSeroPosition(angle);
+       delay(1000);
      }
   //from 1 to 0 
-   for(float t=1;t>=0;t-=0.01)
+   for(float angle=1;angle>=0;t-=1)
      {
-       setSeroPosition(t);
-       delay();
+       setSeroPosition(angle);
+       delay(1000);
      }
   
 }
