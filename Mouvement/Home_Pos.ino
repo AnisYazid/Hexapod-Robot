@@ -19,6 +19,7 @@ int standingPositionsLeft[NUM_SERVOS_PER_SIDE] =
   100, 100, 100  // Left rear leg
 };
 
+
 int standingPositionsRight[NUM_SERVOS_PER_SIDE] = 
 {
   100, 100, 100, // Right front leg
@@ -26,14 +27,19 @@ int standingPositionsRight[NUM_SERVOS_PER_SIDE] =
   100, 100, 100  // Right rear leg
 };
 
+
+
 // Function to convert degrees to PWM pulse width
 uint16_t servoAngleToPWM(int angle) 
 {
   return map(angle, 0, 200, SERVOMIN, SERVOMAX);
 }
-float easeOutCubic(float x){
+float easeOutCubic(float x)
+{
     return 1- pow(1 - x, 3);
 }
+
+
 
 // Function to set the servos to the home position
 void home() 
