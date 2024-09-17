@@ -8,7 +8,7 @@ const int8_t RX_PIN = 16; // Replace with your actual RX pin
 
 
 /* SBUS object for reading SBUS */
-SbusRx sbus_rx(&Serial2, RX_PIN,-1, false, false); // Adjust the last two bools as needed
+SbusRx sbus_rx(&Serial2, RX_PIN,-1, true, false); // Adjust the last two bools as needed
 /* SBUS object for writing SBUS */
 
 SbusData data;
@@ -17,7 +17,6 @@ void setup()
  {
   /* Serial to display data */
   Serial.begin(115200);
-  while (!Serial) {} // Wait for serial to connect
 
   /* Begin the SBUS communication */
   sbus_rx.Begin(); // Initialize SBUS receiver
@@ -36,7 +35,7 @@ void loop()
      {
       Serial.print(data.ch[i]); // Print channel value
       Serial.print("\t"); // Tab for formatting
-    }
+     }
 
     /* Display lost frames and failsafe data */
     Serial.print(data.lost_frame); // Print lost frames
