@@ -12,7 +12,7 @@ int standingPosition[NUM_SERVOS] ={ 100, 100 , 100};
 
 uint16_t servoAngleToPWM( int angle)
 {
-  return map(angle,0,180, SERVOMIN, SERVOMAX);
+  return map(angle,0,200, SERVOMIN, SERVOMAX);
 }
 
 float easeOutCubic(float x)
@@ -20,44 +20,41 @@ float easeOutCubic(float x)
   return pow(x-1,3)+1;
 }
 
-void home()
-{
-  for (int i=0;i<NUM_SERVOS;i++){
-
-pwm.setPWM(i,0,servoAngleToPWM(standingPosition[i]));
-  }
-}
 
 
 void setServoPosition(float t)
 {
- float easeValue= easeOutCubic(t);
-for(int i=0;i<NUM8SERVOS;i++){
-int position =ma( easeValue,0,1, SERVOMIN,SERVOMAX);
-pwm.setPWM(i,0,position);
-}
+  float easeValue= easeOutCubic(t);
+
+  for(int i=0;i<NUM8SERVOS;i++)
+   {
+     int position =ma( easeValue,0,200, SERVOMIN,SERVOMAX);
+      pwm.setPWM(i,0,position);
+   }
 }
 
 void setup ()
 { 
   pwm.begin();
-pwm.setPWMFreq(60);
-home();
+  pwm.setPWMFreq(60);
+
 }
 
 void loop ()
 {
-  for(float t=0;t<=1; t+=0.01)
-  {
-    setServoPosition(t);
-    delay();
-  }
-delay();
-for(float t=1;t>=0; t-=0.01)
-  {
-    setServoPosition(t);
-    delay();
-  }
+  //easing motion from 0 to 1
+  // 0 for the starting transition and 1 for the end 
+   for(float angle=0;angle<=1;angle+=1)
+     {
+       setSeroPosition(angle);
+       delay(1000);
+     }
+  //from 1 to 0 
+   for(float angle=1;angle>=0;t-=1)
+     {
+       setSeroPosition(angle);
+       delay(1000);
+     }
 }
 
 
