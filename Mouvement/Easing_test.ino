@@ -2,17 +2,17 @@
 #include <Adafruit_PCA9685.h>
 
 
-Adafruit_PCA9685 pwm = Adafruit_PCA9685();
+Adafruit_PCA9685 pwm = Adafruit_PCA9685(0x41);
 
-const int NUM_SERVOS=3;
+
 const int SERVOMIN= 900 ;
 const int SERVOMax=2100 ;
 
-int standingPosition[NUM_SERVOS] ={ 100, 100 , 100};
+int standingPosition[NUM_SERVOS] ={ 100, 100 , 100 };
 
 uint16_t servoAngleToPWM( int angle)
 {
-  return map(angle,0,200, SERVOMIN, SERVOMAX);
+  return map(angle,0,180, SERVOMIN, SERVOMAX);
 }
 
 float easeOutCubic(float x)
@@ -24,19 +24,17 @@ float easeOutCubic(float x)
 
 void setServoPosition(float t)
 {
-  float easeValue= easeOutCubic(t);
+     float easeValue= easeOutCubic(t);
 
-  for(int i=0;i<NUM8SERVOS;i++)
-   {
-     int position =ma( easeValue,0,200, SERVOMIN,SERVOMAX);
-      pwm.setPWM(i,0,position);
-   }
+     int position =map( easeValue,0,180, SERVOMIN,SERVOMAX);
+
+     pwm.setPWM(i,0,position);
 }
 
 void setup ()
 { 
   pwm.begin();
-  pwm.setPWMFreq(60);
+  pwm.setPWMFreq(50);
 
 }
 
