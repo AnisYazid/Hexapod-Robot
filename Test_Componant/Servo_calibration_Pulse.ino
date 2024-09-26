@@ -24,7 +24,7 @@ void loop()
   delay(2000); 
 
   // Swing to maximum position
-  pwm.setPWM(14, 0, pulseMax); // Send the PWM value for maximum
+  pwm.setPWM(14, 0, pulseMax); // Send the PWM value for maximum 
   delay(2000); 
 
 }
