@@ -8,7 +8,7 @@
 </div>
 
 ## Overview
-This project involves the design and development of a hexapod robot equipped with 18 HS-475HB servo motors for movement, controlled by an ESP32 microcontroller. The robot utilizes two PCA9685 servo drivers to manage the 18 servos—dividing them between the left and right sides for better control and coordination. An accelerometer is integrated for real-time calibration and stabilization. For movement, the robot employs Bézier curves for smooth trajectory planning and PID (Proportional-Integral-Derivative) control for precise servo positioning. For autonomous navigation, the robot leverages a Jetson Nano paired with an Xbox Kinect V2 for environmental mapping and obstacle avoidance. Additionally, the robot features a buzzer and LEDs for debugging and status indication. The robot can also be controlled remotely using a Radiolink AT10 transmitter and RD12DS receiver.
+This project involves the design and development of a hexapod robot equipped with 18 HS-475HB servo motors for movement, controlled by an ESP32 microcontroller. The robot utilizes two PCA9685 servo drivers to manage the 18 servos—dividing them between the left and right sides for better control and coordination. An accelerometer is integrated for real-time calibration and stabilization. For movement, the robot employs Bézier curves for smooth trajectory planning and PID (Proportional-Integral-Derivative) control for precise servo positioning. For autonomous navigation, the robot leverages a Jetson Nano paired with an Xbox Kinect V1 for environmental mapping and obstacle avoidance. Additionally, the robot features a buzzer and LEDs for debugging and status indication. The robot can also be controlled remotely using a Radiolink AT10 transmitter and RD12DS receiver.
 
 ## Components
 - **Microcontroller:** ESP32
@@ -18,13 +18,13 @@ This project involves the design and development of a hexapod robot equipped wit
 - **Servo Motors:** 18 x HS-475HB
 - **Orientation Sensor:** MPU6050 
 - **Processing Unit:** Jetson Nano (for advanced processing and AI capabilities)
-- **Depth Sensor:** Xbox Kinect V2 (for 3D mapping and object detection amd mapping)
+- **Depth Sensor:** Xbox Kinect V1 (for 3D mapping and object detection amd mapping)
 - **Buzzer:** For audio feedback and alerts
 - **LEDs:**
   - **Red LED:** Main power indicator
   - **Blue LED:** Connection status indicator (searching for remote and Jetson)
   - **Green LED:** Setup ready indicator (all systems operational)
-- **Power Supply:** 4S 14.8V LiPo battery (100C rating)
+- **Power Supply:** 12V 30A power Supply 
 - **Remote Control:**
   - **Transmitter:** Radiolink AT10II
   - **Receiver:** Radiolink RD12DS (connected to ESP32 via TX2 pin)
@@ -60,7 +60,7 @@ This project involves the design and development of a hexapod robot equipped wit
   
 - **Autonomous Navigation:** Implements SLAM (Simultaneous Localization and Mapping) algorithms for navigating complex environments.
   
-- **Obstacle Detection:** Utilizes Kinect V2 for depth perception and real-time obstacle avoidance.
+- **Obstacle Detection:** Utilizes Kinect V1 for depth perception and real-time obstacle avoidance.
   
 - **Debugging Tools:** Buzzer for alerts and LEDs for indicating status (e.g., errors, operational states).
   
@@ -114,12 +114,30 @@ This project involves the design and development of a hexapod robot equipped wit
 - **PCA9685 Servo Driver 1:**
   - SDA: GPIO 21
   - SCL: GPIO 22
+  - **Servos:**
+    - Servo A1: Channel 0
+    - Servo A2: Channel 1
+    - Servo A3: Channel 2
+    - Servo B1: Channel 3
+    - Servo B2: Channel 4
+    - Servo B3: Channel 5
+    - Servo C1: Channel 6
+    - Servo C2: Channel 7
+    - Servo C3: Channel 8
 
 - **PCA9685 Servo Driver 2:**
   - SDA: GPIO 21
   - SCL: GPIO 22
-  - (Note: Both drivers share the same SDA and SCL pins)
-
+  - **Servos:**
+    - Servo D1: Channel 0
+    - Servo D2: Channel 1
+    - Servo D3: Channel 2
+    - Servo E1: Channel 3
+    - Servo E2: Channel 4
+    - Servo E3: Channel 5
+    - Servo F1: Channel 6
+    - Servo F2: Channel 7
+    - Servo F3: Channel 8
 - **MPU6050:**
   - SDA: GPIO 21
   - SCL: GPIO 22
