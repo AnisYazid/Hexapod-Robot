@@ -1,7 +1,9 @@
 # Hexapod Robot with ESP32 and Jetson Nano
 
+<div align="center">
 ![Hexapod Robot](https://github.com/AnisYazid/Hexapod-Robot/blob/main/image0.jpeg)   
 ![Hexapod Robot](https://github.com/AnisYazid/Hexapod-Robot/blob/main/image2.jpeg)   
+</div>
 
 ## Overview
 This project involves the design and development of a hexapod robot equipped with 18 HS-475HB servo motors for movement, controlled by an ESP32 microcontroller. The robot utilizes two PCA9685 servo drivers to manage the 18 servos—dividing them between the left and right sides for better control and coordination. An accelerometer is integrated for real-time calibration and stabilization. For movement, the robot employs Bézier curves for smooth trajectory planning and PID (Proportional-Integral-Derivative) control for precise servo positioning. For autonomous navigation, the robot leverages a Jetson Nano paired with an Xbox Kinect V2 for environmental mapping and obstacle avoidance. Additionally, the robot features a buzzer and LEDs for debugging and status indication. The robot can also be controlled remotely using a Radiolink AT10 transmitter and RD12DS receiver.
