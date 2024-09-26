@@ -194,4 +194,6 @@ This project involves the design and development of a hexapod robot equipped wit
   
 - **Bézier Curves:** [Understanding Bézier Curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)
 
+- Easing Function Library:** [smooth movement for Servo](https://github.com/ArminJo/ServoEasing/tree/master)
+
 - **NVIDIA Jetson Nano Installation:** [Jetson Nano Setup Guide](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit)
