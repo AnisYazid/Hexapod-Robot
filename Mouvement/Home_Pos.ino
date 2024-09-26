@@ -5,7 +5,7 @@
 #define ENABLE_EASE_CUBIC
 
 // Define addresses for the two PCA9685 modules
-#define PCA9685_ADDRESS_1 0x40
+#define PCA9685_ADDRESS_1 0x42
 #define PCA9685_ADDRESS_2 0x41
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -36,61 +36,61 @@ ServoEasing Servo2_F3(PCA9685_ADDRESS_2); // Servo 9 on PCA9685 Module 2
 
 // Define pulse values for each servo
 
-#define SERVO1_A1_MIN_PULSE 1000 // Minimum pulse width for Servo 1 on Module 1
-#define SERVO1_A1_MAX_PULSE 2000 // Maximum pulse width for Servo 1 on Module 1
+#define SERVO1_A1_MIN_PULSE 600 // Minimum pulse width for Servo 1 on Module 1
+#define SERVO1_A1_MAX_PULSE 2600 // Maximum pulse width for Servo 1 on Module 1
 
-#define SERVO1_A2_MIN_PULSE 1100 // Minimum pulse width for Servo 2 on Module 1
-#define SERVO1_A2_MAX_PULSE 2100 // Maximum pulse width for Servo 2 on Module 1
+#define SERVO1_A2_MIN_PULSE 600 // Minimum pulse width for Servo 2 on Module 1
+#define SERVO1_A2_MAX_PULSE 2600 // Maximum pulse width for Servo 2 on Module 1
 
-#define SERVO1_A3_MIN_PULSE 1200 // Minimum pulse width for Servo 3 on Module 1
-#define SERVO1_A3_MAX_PULSE 2200 // Maximum pulse width for Servo 3 on Module 1
+#define SERVO1_A3_MIN_PULSE 600 // Minimum pulse width for Servo 3 on Module 1
+#define SERVO1_A3_MAX_PULSE 2600 // Maximum pulse width for Servo 3 on Module 1
 
-#define SERVO1_B1_MIN_PULSE 1300 // Minimum pulse width for Servo 4 on Module 1
-#define SERVO1_B1_MAX_PULSE 2300 // Maximum pulse width for Servo 4 on Module 1
+#define SERVO1_B1_MIN_PULSE 600 // Minimum pulse width for Servo 4 on Module 1
+#define SERVO1_B1_MAX_PULSE 2600 // Maximum pulse width for Servo 4 on Module 1
 
-#define SERVO1_B2_MIN_PULSE 1400 // Minimum pulse width for Servo 5 on Module 1
-#define SERVO1_B2_MAX_PULSE 2400 // Maximum pulse width for Servo 5 on Module 1
+#define SERVO1_B2_MIN_PULSE 600 // Minimum pulse width for Servo 5 on Module 1
+#define SERVO1_B2_MAX_PULSE 2600 // Maximum pulse width for Servo 5 on Module 1
 
-#define SERVO1_B3_MIN_PULSE 1500 // Minimum pulse width for Servo 6 on Module 1
+#define SERVO1_B3_MIN_PULSE 600 // Minimum pulse width for Servo 6 on Module 1
 #define SERVO1_B3_MAX_PULSE 2500 // Maximum pulse width for Servo 6 on Module 1
 
-#define SERVO1_C1_MIN_PULSE 1600 // Minimum pulse width for Servo 7 on Module 1
+#define SERVO1_C1_MIN_PULSE 600 // Minimum pulse width for Servo 7 on Module 1
 #define SERVO1_C1_MAX_PULSE 2600 // Maximum pulse width for Servo 7 on Module 1
 
-#define SERVO1_C2_MIN_PULSE 1700 // Minimum pulse width for Servo 8 on Module 1
-#define SERVO1_C2_MAX_PULSE 2700 // Maximum pulse width for Servo 8 on Module 1
+#define SERVO1_C2_MIN_PULSE 500 // Minimum pulse width for Servo 8 on Module 1
+#define SERVO1_C2_MAX_PULSE 2600 // Maximum pulse width for Servo 8 on Module 1
 
-#define SERVO1_C3_MIN_PULSE 1800 // Minimum pulse width for Servo 9 on Module 1
-#define SERVO1_C3_MAX_PULSE 2800 // Maximum pulse width for Servo 9 on Module 1
+#define SERVO1_C3_MIN_PULSE 800 // Minimum pulse width for Servo 9 on Module 1
+#define SERVO1_C3_MAX_PULSE 2700 // Maximum pulse width for Servo 9 on Module 1
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define SERVO2_D1_MIN_PULSE 1000 // Minimum pulse width for Servo 1 on Module 2
-#define SERVO2_D1_MAX_PULSE 2000 // Maximum pulse width for Servo 1 on Module 2
+#define SERVO2_D1_MIN_PULSE 500 // Minimum pulse width for Servo 1 on Module 2
+#define SERVO2_D1_MAX_PULSE 2500 // Maximum pulse width for Servo 1 on Module 2
 
-#define SERVO2_D2_MIN_PULSE 1100 // Minimum pulse width for Servo 2 on Module 2
-#define SERVO2_D2_MAX_PULSE 2100 // Maximum pulse width for Servo 2 on Module 2
+#define SERVO2_D2_MIN_PULSE 700 // Minimum pulse width for Servo 2 on Module 2
+#define SERVO2_D2_MAX_PULSE 2600 // Maximum pulse width for Servo 2 on Module 2
 
-#define SERVO2_D3_MIN_PULSE 1200 // Minimum pulse width for Servo 3 on Module 2
-#define SERVO2_D3_MAX_PULSE 2200 // Maximum pulse width for Servo 3 on Module 2
+#define SERVO2_D3_MIN_PULSE 800 // Minimum pulse width for Servo 3 on Module 2
+#define SERVO2_D3_MAX_PULSE 2700 // Maximum pulse width for Servo 3 on Module 2
 
-#define SERVO2_E1_MIN_PULSE 1300 // Minimum pulse width for Servo 4 on Module 2
-#define SERVO2_E1_MAX_PULSE 2300 // Maximum pulse width for Servo 4 on Module 2
+#define SERVO2_E1_MIN_PULSE 600 // Minimum pulse width for Servo 4 on Module 2
+#define SERVO2_E1_MAX_PULSE 2600 // Maximum pulse width for Servo 4 on Module 2
 
-#define SERVO2_E2_MIN_PULSE 1400 // Minimum pulse width for Servo 5 on Module 2
-#define SERVO2_E2_MAX_PULSE 2400 // Maximum pulse width for Servo 5 on Module 2
+#define SERVO2_E2_MIN_PULSE 500 // Minimum pulse width for Servo 5 on Module 2
+#define SERVO2_E2_MAX_PULSE 2600 // Maximum pulse width for Servo 5 on Module 2
 
-#define SERVO2_E3_MIN_PULSE 1500 // Minimum pulse width for Servo 6 on Module 2
-#define SERVO2_E3_MAX_PULSE 2500 // Maximum pulse width for Servo 6 on Module 2
+#define SERVO2_E3_MIN_PULSE 600 // Minimum pulse width for Servo 6 on Module 2
+#define SERVO2_E3_MAX_PULSE 2600 // Maximum pulse width for Servo 6 on Module 2
 
-#define SERVO2_F1_MIN_PULSE 1600 // Minimum pulse width for Servo 7 on Module 2
+#define SERVO2_F1_MIN_PULSE 600 // Minimum pulse width for Servo 7 on Module 2
 #define SERVO2_F1_MAX_PULSE 2600 // Maximum pulse width for Servo 7 on Module 2
 
-#define SERVO2_F2_MIN_PULSE 1700 // Minimum pulse width for Servo 8 on Module 2
+#define SERVO2_F2_MIN_PULSE 500 // Minimum pulse width for Servo 8 on Module 2
 #define SERVO2_F2_MAX_PULSE 2700 // Maximum pulse width for Servo 8 on Module 2
 
-#define SERVO2_F3_MIN_PULSE 1800 // Minimum pulse width for Servo 9 on Module 2
-#define SERVO2_F3_MAX_PULSE 2800 // Maximum pulse width for Servo 9 on Module 2
+#define SERVO2_F3_MIN_PULSE 600 // Minimum pulse width for Servo 9 on Module 2
+#define SERVO2_F3_MAX_PULSE 2600 // Maximum pulse width for Servo 9 on Module 2
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
