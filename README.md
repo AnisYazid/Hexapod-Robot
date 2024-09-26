@@ -1,7 +1,7 @@
 # Hexapod Robot with ESP32 and Jetson Nano
 
 <div align="center">
- <img src="https://github.com/AnisYazid/Hexapod-Robot/blob/main/image0.jpeg" alt="Hexapod Robot" width="400"/>
+ <img src="https://github.com/AnisYazid/Hexapod-Robot/blob/main/image0.jpeg" alt="Hexapod Robot" width="800"/>
 </div>
 
 ## Overview
