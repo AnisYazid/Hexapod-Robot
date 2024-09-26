@@ -2,8 +2,8 @@
 
 <div align="center">
 
- <img src="https://github.com/AnisYazid/Hexapod-Robot/blob/main/image0.jpeg" alt="Hexapod Robot" width="400" style="display: inline-block; margin: 10px;"/>
- <img src="https://github.com/AnisYazid/Hexapod-Robot/blob/main/image2.jpeg" alt="HExapod Robot" width="400" style="display: inline-block; margin: 10px;"/>
+ <img src="https://github.com/AnisYazid/Hexapod-Robot/blob/main/image0.jpeg" alt="Hexapod Robot" width="400" style="display: inline-block; margin: 15px;"/>
+ <img src="https://github.com/AnisYazid/Hexapod-Robot/blob/main/image2.jpeg" alt="HExapod Robot" width="400" style="display: inline-block; margin: 15px;"/>
  
 </div>
 
