@@ -6,7 +6,8 @@ Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver(0x42); // Ensure this is t
 const int SERVOMIN = 600;   // Minimum pulse width in microseconds
 const int SERVOMAX = 2400;  // Maximum pulse width in microseconds
 
-void setup() {
+void setup() 
+{
     Serial.begin(115200); // Start serial communication for debugging
     pwm.begin();
     pwm.setPWMFreq(50); // Set frequency to 50 Hz for servos
@@ -28,14 +29,17 @@ void loop()
 }
 
 // Function to set the servo position
-void setServoPosition(int pulseWidth) {
+void setServoPosition(int pulseWidth)
+{
     int pwmValue = map(pulseWidth, 0, 20000, 0, 4095); // Map to 12-bit PWM value (0-4095)
     pwm.setPWM(0, 0, pwmValue); // Set the PWM value for channel 0
 }
 
 // Cubic easing function
-float cubicEaseInOut(float t) {
-    if (t < 0.5) {
+float cubicEaseInOut(float t)
+ {
+    if (t < 0.5) 
+    {
         return 4 * t * t * t;
     } else {
         float f = (t - 1);
@@ -46,7 +50,8 @@ float cubicEaseInOut(float t) {
 // Function to ramp the servo position with easing
 void rampServo(int startPulse, int endPulse, int duration) {
     int steps = 100; // Number of steps for the ramp
-    for (int i = 0; i <= steps; i++) {
+    for (int i = 0; i <= steps; i++) 
+    {
         float t = (float)i / (float)steps; // Normalize time
         float easedValue = cubicEaseInOut(t); // Get eased value
 
