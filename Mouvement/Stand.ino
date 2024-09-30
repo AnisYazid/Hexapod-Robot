@@ -68,6 +68,7 @@ Adafruit_PWMServoDriver pwm_L = Adafruit_PWMServoDriver(0x42);
 void setup()
 {
     Serial.begin(115200);
+    
     pwm_R.begin();
     pwm_R.setPWMFreq(50); // Set frequency to 50 Hz for servos
 
