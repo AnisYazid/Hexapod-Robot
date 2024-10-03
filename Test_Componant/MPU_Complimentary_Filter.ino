@@ -44,7 +44,7 @@ void loop()
     Serial.print("\tY: ");
     Serial.print(mpu.getAngleY());
     Serial.print("\tZ: ");
-    Serial.println(mpu.getAngleZ());
+    Serial.println(mpu.getAngleZ()); // Does not matter in this Project //
     timer = millis();
   }
 
