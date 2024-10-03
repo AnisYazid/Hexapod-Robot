@@ -33,7 +33,6 @@ void loop()
       Serial.print(data.ch[i]); // Print channel value
       Serial.print("\t"); // Tab for formatting
     }
-
     /* Display lost frames and failsafe data */
     Serial.print(data.lost_frame); // Print lost frames
     Serial.print("\t");
