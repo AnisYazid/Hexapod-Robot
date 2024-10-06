@@ -82,10 +82,9 @@ This project involves the design and development of a hexapod robot equipped wit
     - Blue for connection status
     - Green for setup readiness
   - Resistors for LEDs (if needed)
-  - 4S LiPo battery (100C rating)
   - Radiolink AT10 transmitter
   - Radiolink RD12DS receiver
-  - Power supply
+  - Power supply 12V 30A 
  
 - **Software:**
 
