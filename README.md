@@ -8,13 +8,13 @@
 </div>
 
 ## Overview
-This project involves the design and development of a hexapod robot equipped with 18 HS-475HB servo motors for movement, controlled by an ESP32 microcontroller. The robot utilizes two PCA9685 servo drivers to manage the 18 servos—dividing them between the left and right sides for better control and coordination. An accelerometer is integrated for real-time calibration and stabilization. For movement, the robot employs Bézier curves for smooth trajectory planning and PID (Proportional-Integral-Derivative) control for precise servo positioning. For autonomous navigation, the robot leverages a Jetson Nano paired with an Xbox Kinect V1 for environmental mapping and obstacle avoidance. Additionally, the robot features a buzzer and LEDs for debugging and status indication. The robot can also be controlled remotely using a Radiolink AT10 transmitter and RD12DS receiver.
+This project involves the design and development of a hexapod robot equipped with 18 HS-475HB servo motors for movement, controlled by an ESP32 microcontroller. The robot utilizes two PCA9685 servo drivers to manage the 18 servos—dividing them between the left and right sides for better control and coordination. An accelerometer is integrated for real-time calibration and stabilization. For movement, the robot employs Algebric Equations for smooth trajectory planning and PID (Proportional-Integral-Derivative) control for precise servo positioning. For autonomous navigation, the robot leverages a Jetson Nano paired with an Xbox Kinect V1 Depth Camera for environmental mapping and obstacle avoidance. Additionally, the robot features a buzzer and LEDs for debugging and status indication. The robot can also be controlled remotely using a Radiolink AT10 transmitter and RD12DS receiver.
 
 ## Components
 - **Microcontroller:** ESP32
 - **Servo Drivers:** 2 x PCA9685 (one for the left side, one for the right side)
   - **Right PCA9685 Address Modification: 0x41 ** A0 pin soldered to change the I2C address ( E-D-F )
-  - **Left PCA9685 Address Modification: 0x42 ** A1 pin soldered to change the I2C address ( A-B-C )
+  - **Left  PCA9685 Address Modification: 0x42 ** A1 pin soldered to change the I2C address ( A-B-C )
 - **Servo Motors:** 18 x HS-475HB
 - **Orientation Sensor:** MPU6050 
 - **Processing Unit:** Jetson Nano (for advanced processing and AI capabilities)
@@ -115,29 +115,29 @@ This project involves the design and development of a hexapod robot equipped wit
   - SDA: GPIO 21
   - SCL: GPIO 22
   - **Servos:**
-    - Servo A1: Channel 0
+    - Servo A1: Channel 2
     - Servo A2: Channel 1
-    - Servo A3: Channel 2
-    - Servo B1: Channel 3
-    - Servo B2: Channel 4
-    - Servo B3: Channel 5
-    - Servo C1: Channel 6
-    - Servo C2: Channel 7
-    - Servo C3: Channel 8
+    - Servo A3: Channel 0
+    - Servo B1: Channel 6
+    - Servo B2: Channel 5
+    - Servo B3: Channel 4
+    - Servo C1: Channel 15
+    - Servo C2: Channel 14
+    - Servo C3: Channel 13
 
 - **PCA9685 Servo Driver 2:**
   - SDA: GPIO 21
   - SCL: GPIO 22
   - **Servos:**
-    - Servo D1: Channel 0
-    - Servo D2: Channel 1
-    - Servo D3: Channel 2
-    - Servo E1: Channel 3
-    - Servo E2: Channel 4
-    - Servo E3: Channel 5
-    - Servo F1: Channel 6
-    - Servo F2: Channel 7
-    - Servo F3: Channel 8
+    - Servo D1: Channel 15
+    - Servo D2: Channel 14
+    - Servo D3: Channel 13
+    - Servo E1: Channel 6
+    - Servo E2: Channel 5
+    - Servo E3: Channel 4
+    - Servo F1: Channel 2
+    - Servo F2: Channel 1
+    - Servo F3: Channel 0
 - **MPU6050:**
   - SDA: GPIO 21
   - SCL: GPIO 22
@@ -149,7 +149,7 @@ This project involves the design and development of a hexapod robot equipped wit
   - Green LED: GPIO 2
 
 - **Buzzer:**
-  - Buzzer: GPIO 23
+  - Buzzer: GPIO 26
  
 ## Troubleshooting
 ### Common Issues
@@ -194,6 +194,6 @@ This project involves the design and development of a hexapod robot equipped wit
   
 - **Bézier Curves:** [Understanding Bézier Curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)
 
-- Easing Function Library:** [smooth movement for Servo](https://github.com/ArminJo/ServoEasing/tree/master)
+- **Easing Function Library:** [smooth movement for Servo](https://github.com/ArminJo/ServoEasing/tree/master)
 
 - **NVIDIA Jetson Nano Installation:** [Jetson Nano Setup Guide](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit)
