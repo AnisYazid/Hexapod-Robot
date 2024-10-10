@@ -159,10 +159,10 @@ void loop()
       setServoPosition(pwm_R, 6, 85);      // E1
       setServoPosition(pwm_R, 2, 100);     // F1
 
-  tilt();
+  UP_DW();
 }
 
-void tilt() // this is the code for up and down no tilt 
+void UP_DW() // this is the code for up and down no tilt 
 {
    int f ;
    int a ;
