@@ -148,12 +148,12 @@ int j;
         data = sbus_rx.data(); // Retrieve the received SBUS data
 
         
-       if (data.ch[4] == 1694) // value to check and Channel  
+       if (data.ch[4] == 306) // value to check and Channel  
         {
               digitalWrite(ledPinG, HIGH);
               home();  
         }
-        else if (data.ch[4] == 306) 
+        else if (data.ch[4] == 1694) 
         {
               digitalWrite(ledPinG, HIGH);         
               stand();
@@ -167,7 +167,7 @@ int j;
         else if (data.ch[9] == 306)
         {
           digitalWrite(ledPinG,HIGH);
-          Tilt();
+          Auto();
           setServoPosition(pwm_L, 2, 90);      // A1
           setServoPosition(pwm_L, 6, 85);      // B1
           setServoPosition(pwm_L, 15, 90);     // C1
@@ -200,7 +200,18 @@ int j;
           setServoPosition(pwm_R, 15, 80);     // D1
           setServoPosition(pwm_R, 6, 85);      // E1
           setServoPosition(pwm_R, 2, 100);     // F1
+        }  
+
+        else if (data.ch[7] == 306)
+        {
+          if(data.ch[5] == 306)
+          {
+            digitalWrite(ledPinG, HIGH);
+            forward() ;
+          }
         }
+
+
         
 
      } 
@@ -298,7 +309,7 @@ void stand()
     setServoPosition(pwm_L, 1, f);     // A2
     setServoPosition(pwm_L, 0, f);     // A3
     
-    setServoPosition(pwm_L, 6, 85);      // B1
+    setServoPosition(pwm_L, 6, 90);      // B1
     setServoPosition(pwm_L, 5, f);     // B2
     setServoPosition(pwm_L, 4, f);     // B3
     
@@ -306,15 +317,15 @@ void stand()
     setServoPosition(pwm_L, 14, f);    // C2
     setServoPosition(pwm_L, 13, f);    // C3
    
-    setServoPosition(pwm_R, 15, 80);     // D1
+    setServoPosition(pwm_R, 15, 90);     // D1
     setServoPosition(pwm_R, 14, a);     // D2
     setServoPosition(pwm_R, 13, a);     // D3
    
-    setServoPosition(pwm_R, 6, 85);      // E1
+    setServoPosition(pwm_R, 6, 90);      // E1
     setServoPosition(pwm_R, 5, a);      // E2
     setServoPosition(pwm_R, 4, a);       // E3
    
-    setServoPosition(pwm_R, 2, 100);     // F1
+    setServoPosition(pwm_R, 2, 90);     // F1
     setServoPosition(pwm_R, 1, a);      // F2
     setServoPosition(pwm_R, 0, a);       // F3
 }
@@ -328,7 +339,7 @@ void home()
     setServoPosition(pwm_L, 1, f);     // A2
     setServoPosition(pwm_L, 0, f);     // A3
     
-    setServoPosition(pwm_L, 6, 85);      // B1
+    setServoPosition(pwm_L, 6, 90);      // B1
     setServoPosition(pwm_L, 5, f);     // B2
     setServoPosition(pwm_L, 4, f);     // B3
     
@@ -336,15 +347,15 @@ void home()
     setServoPosition(pwm_L, 14, f);    // C2
     setServoPosition(pwm_L, 13, f);    // C3
    
-    setServoPosition(pwm_R, 15, 80);     // D1
+    setServoPosition(pwm_R, 15, 90);     // D1
     setServoPosition(pwm_R, 14, a);     // D2
     setServoPosition(pwm_R, 13, a);     // D3
    
-    setServoPosition(pwm_R, 6, 85);      // E1
+    setServoPosition(pwm_R, 6, 90);      // E1
     setServoPosition(pwm_R, 5, a);      // E2
     setServoPosition(pwm_R, 4, a);       // E3
    
-    setServoPosition(pwm_R, 2, 100);     // F1
+    setServoPosition(pwm_R, 2, 90);     // F1
     setServoPosition(pwm_R, 1, a);      // F2
     setServoPosition(pwm_R, 0, a);       // F3
 }
@@ -354,7 +365,7 @@ void forward()
     int f;
     int a;
   
-     for ( f=50,a=120; f<=120, a>=50; a--,f++)
+     for ( f=90,a=90; f<=120, a>=50; a--,f++)
  {
       setServoPosition(pwm_L, 1, f);     // A2
       setServoPosition(pwm_L, 0, f);     // A3
@@ -366,19 +377,20 @@ void forward()
       setServoPosition(pwm_R, 4, a);       // E3
 
 
-      setServoPosition(pwm_L, 5, a);     // B2
-      setServoPosition(pwm_L, 4, a);     // B3
+      setServoPosition(pwm_L, 5, 90);     // B2
+      setServoPosition(pwm_L, 4,90);     // B3
           
-      setServoPosition(pwm_R, 14, f);     // D2
-      setServoPosition(pwm_R, 13, f);     // D3
+      setServoPosition(pwm_R, 14, 90);     // D2
+      setServoPosition(pwm_R, 13, 90);     // D3
     
-      setServoPosition(pwm_R, 1, f);      // F2
-      setServoPosition(pwm_R, 0, f);       // F3
+      setServoPosition(pwm_R, 1, 90);      // F2
+      setServoPosition(pwm_R, 0, 90);       // F3
+      delay(15);
   
  }
- delay(300);
 
-     for ( int i= 120 , j=60; j<=120 , i>= 60; j++ ,i--)
+ delay(300);
+     for ( int i= 110 , j=70; j<=110 , i>= 70; j++ ,i--)
     {
                    setServoPosition(pwm_L, 2, i);      // A1
                    setServoPosition(pwm_L, 15, i);     // C1
@@ -386,35 +398,37 @@ void forward()
                    
                    setServoPosition(pwm_L, 6, j);      // B1
                    setServoPosition(pwm_R, 15, i);     // D1
-                   setServoPosition(pwm_R, 2, i);     // F1
+                   setServoPosition(pwm_R, 2, i);     // F1]
+                   delay(15);
     }
     delay(300);
 
-  for ( f=120,a=50; f>=50, a<=120; a++,f--)
+  for ( f=90,a=90; f<=120, a>=50; a++,f--)
  {
-      setServoPosition(pwm_L, 1, f);     // A2
-      setServoPosition(pwm_L, 0, f);     // A3
+      setServoPosition(pwm_L, 1, 90);     // A2
+      setServoPosition(pwm_L, 0, 90);     // A3
   
-      setServoPosition(pwm_L, 14, f);    // C2
-      setServoPosition(pwm_L, 13, f);    // C3
+      setServoPosition(pwm_L, 14, 90);    // C2
+      setServoPosition(pwm_L, 13, 90);    // C3
   
-      setServoPosition(pwm_R, 5, a);      // E2
-      setServoPosition(pwm_R, 4, a);       // E3
+      setServoPosition(pwm_R, 5, 90);      // E2
+      setServoPosition(pwm_R, 4, 90);       // E3
+      
 
-      setServoPosition(pwm_L, 5, a);     // B2
-      setServoPosition(pwm_L, 4, a);     // B3
+      setServoPosition(pwm_L, 5, f);     // B2
+      setServoPosition(pwm_L, 4, f);     // B3
           
-      setServoPosition(pwm_R, 14, f);     // D2
-      setServoPosition(pwm_R, 13, f);     // D3
+      setServoPosition(pwm_R, 14, a);     // D2
+      setServoPosition(pwm_R, 13, a);     // D3
     
-      setServoPosition(pwm_R, 1, f);      // F2
-      setServoPosition(pwm_R, 0, f);       // F3
+      setServoPosition(pwm_R, 1, a);      // F2
+      setServoPosition(pwm_R, 0, a);       // F3
+      delay(15);
   
  }
- delay(300); 
 
- 
-     for ( int i= 60 , j=120; j>=60 , i<= 120; j-- ,i++)
+  delay(300);
+     for ( int i= 70 , j=110; j>=70 , i<= 110; j-- ,i++)
     {
                    setServoPosition(pwm_L, 2, i);      // A1
                    setServoPosition(pwm_L, 15, i);     // C1
@@ -423,6 +437,7 @@ void forward()
                    setServoPosition(pwm_L, 6, j);      // B1
                    setServoPosition(pwm_R, 15, i);     // D1
                    setServoPosition(pwm_R, 2, i);     // F1
+                   delay(15);
     }
     delay(300);
 
@@ -493,10 +508,10 @@ void backward()
 
 }
 
-void Tilt() // this is the code for up and down no tilt 
+void Auto() // this is the code for up and down no tilt 
 {
-   int f ;
-   int a ;
+   float f ;
+   float a ;
 
 
   for ( f=50,a=120 ;a>=50, f<= 120;f++,a--)
@@ -579,7 +594,7 @@ void UP_DW()
 
 void D_G()
 {
-     int T = map(data.ch[0], 306, 1694, 120, 50);
+     float T = map(data.ch[0], 306, 1694, 120, 50);
        
     setServoPosition(pwm_L, 2, 90);      // A1
     setServoPosition(pwm_L, 1, T);     // A2
