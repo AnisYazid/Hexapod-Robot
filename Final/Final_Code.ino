@@ -132,8 +132,6 @@ void setup()
     delay(3000);
 }
 
-//////////////////////////////////////////////////////////
-
 void loop ()
 {
 int f;
@@ -266,9 +264,6 @@ else
      
 }
      
-
-
-////////////////////////////////////////////////////////////
 
 void setServoPosition(Adafruit_PWMServoDriver &pwm, int channel, int angle) 
 {
@@ -1003,6 +998,143 @@ void Rot_r()
  
 }
 
+void Rot_l() 
+{
+    int f;
+    int a;
+
+    float t = map(data.ch[6], 306, 1694, 0, 1000);
+    
+  
+    for ( f=90,a=90; f<=120, a>=60; a--,f++)
+ {
+      setServoPosition(pwm_L, 1, f);     // A2
+      setServoPosition(pwm_L, 0, f);     // A3
+  
+      setServoPosition(pwm_L, 14, f);    // C2
+      setServoPosition(pwm_L, 13, f);    // C3
+  
+      setServoPosition(pwm_R, 5, a);      // E2
+      setServoPosition(pwm_R, 4, a);       // E3
+
+
+      setServoPosition(pwm_L, 5, 90);     // B2
+      setServoPosition(pwm_L, 4,90);     // B3
+          
+      setServoPosition(pwm_R, 14, 90);     // D2
+      setServoPosition(pwm_R, 13, 90);     // D3
+    
+      setServoPosition(pwm_R, 1, 90);      // F2
+      setServoPosition(pwm_R, 0, 90);       // F3
+     
+  
+ }
+  
+
+     for ( int i= 110 , j=90; j<=110 , i>= 90; j++ ,i--)
+    {
+                   setServoPosition(pwm_L, 2, i);      // A1
+                   setServoPosition(pwm_L, 15, i);     // C1
+                   setServoPosition(pwm_R, 6, i);      // E1
+                   
+                  
+                 
+    }
+
+
+    for ( f=120,a=60; f>=90, a<=90; a++,f--)
+ {
+      setServoPosition(pwm_L, 1, f);     // A2
+      setServoPosition(pwm_L, 0, f);     // A3
+  
+      setServoPosition(pwm_L, 14, f);    // C2
+      setServoPosition(pwm_L, 13, f);    // C3
+  
+      setServoPosition(pwm_R, 5, a);      // E2
+      setServoPosition(pwm_R, 4, a);       // E3
+
+
+      setServoPosition(pwm_L, 5, 90);     // B2
+      setServoPosition(pwm_L, 4,90);     // B3
+          
+      setServoPosition(pwm_R, 14, 90);     // D2
+      setServoPosition(pwm_R, 13, 90);     // D3
+    
+      setServoPosition(pwm_R, 1, 90);      // F2
+      setServoPosition(pwm_R, 0, 90);       // F3
+     
+
+ }
+
+
+ 
+    for ( f=90,a=90; f<=120, a>=60; a--,f++)
+ {
+      setServoPosition(pwm_L, 1, 90);     // A2
+      setServoPosition(pwm_L, 0, 90);     // A3
+  
+      setServoPosition(pwm_L, 14, 90);    // C2
+      setServoPosition(pwm_L, 13, 90);    // C3
+  
+      setServoPosition(pwm_R, 5, 90);      // E2
+      setServoPosition(pwm_R, 4, 90);       // E3
+
+      setServoPosition(pwm_L, 5, f);     // B2
+      setServoPosition(pwm_L, 4,f);     // B3
+          
+      setServoPosition(pwm_R, 14, a);     // D2
+      setServoPosition(pwm_R, 13, a);     // D3
+    
+      setServoPosition(pwm_R, 1, a);      // F2
+      
+  
+ }
+   
+      for ( int i= 90 , j=110; j>=90 , i<= 110; j-- ,i++)
+    {
+                   
+                   
+                   setServoPosition(pwm_L, 6, j);      // B1
+                   setServoPosition(pwm_R, 15, j);     // D1
+                   setServoPosition(pwm_R, 2, j);     // F1
+                  
+    }
+
+ for ( f=120,a=60; f>=90, a<=90; a++,f--)
+ {
+      setServoPosition(pwm_L, 1, 90);     // A2
+      setServoPosition(pwm_L, 0, 90);     // A3
+
+      setServoPosition(pwm_L, 14, 90);    // C2
+      setServoPosition(pwm_L, 13, 90);    // C3
+  
+      setServoPosition(pwm_R, 5, 90);      // E2
+      setServoPosition(pwm_R, 4, 90);       // E3
+      
+
+      setServoPosition(pwm_L, 5, f);     // B2
+      setServoPosition(pwm_L, 4, f);     // B3
+          
+      setServoPosition(pwm_R, 14, a);     // D2
+      setServoPosition(pwm_R, 13, a);     // D3
+    
+      setServoPosition(pwm_R, 1, a);      // F2
+      setServoPosition(pwm_R, 0, a);       // F3
+    
+  
+ }
+ 
+}
+
+void right()
+{
+
+}
+
+void left()
+{
+  
+}
 
 void UP_DW() 
 {  
@@ -1035,7 +1167,6 @@ void UP_DW()
     setServoPosition(pwm_R, 0, A);       // F3
 }
 
-
 void D_G()
 {
      float T = map(data.ch[0], 306, 1694, 120, 50);
@@ -1067,6 +1198,7 @@ void D_G()
 }
 
 void kabrage()
+
 {
 
    float F = map(data.ch[1], 306, 1694, 50, 120);
