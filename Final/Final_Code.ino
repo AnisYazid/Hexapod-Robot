@@ -145,38 +145,6 @@ int j;
         digitalWrite(ledPinB, HIGH);
         data = sbus_rx.data(); // Retrieve the received SBUS data
 
-if(data.ch[4] == 306)
-{ // mouvements 
-  forward();
-  backward();
-  Rot_r();
-  Rot_l();
-  Right();
-  Left():
-}
-else if (data.ch[4] == 306)
-{
-  digitalWrite(ledPinG,HIGH);
-  Auto();
-          setServoPosition(pwm_L, 2, 90);      // A1
-          setServoPosition(pwm_L, 6, 85);      // B1
-          setServoPosition(pwm_L, 15, 90);     // C1
-          setServoPosition(pwm_R, 15, 80);     // D1
-          setServoPosition(pwm_R, 6, 85);      // E1
-          setServoPosition(pwm_R, 2, 100);     // F1
-}
-else
-{
-  UP_DW() ;
-  Rot();
-  stand();
-  home();
-  fb();
-  kabrage();
-  D_G();
- 
-  
-}
 
         
        if (data.ch[4] == 306) // value to check and Channel  
