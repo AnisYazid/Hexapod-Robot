@@ -82,67 +82,133 @@ void loop()
 
 void forward() 
 {
-       setServoPosition(pwm_L, 1, 105);     // A2
-       setServoPosition(pwm_R, 5, 60);      // E2
-       setServoPosition(pwm_L, 14, 120);    // C2
-       ////
-       setServoPosition(pwm_L, 0, 160);     // A3
-       setServoPosition(pwm_R, 4, 5);       // E3
-       setServoPosition(pwm_L, 13, 185);    // C3
+    int f;
+    
+  
+    for ( f=80; f<=130;f++)
+ {
+      setServoPosition(pwm_L, 1, f);     // A2
+      setServoPosition(pwm_L, 0, f);     // A3
+  
+      setServoPosition(pwm_L, 14, f);    // C2
+      setServoPosition(pwm_L, 13, f);    // C3
+  
+      setServoPosition(pwm_R, 5, f);      // E2
+      setServoPosition(pwm_R, 4, f);       // E3
 
-        delay(300);
 
-       setServoPosition(pwm_L, 2, 90);      // A1
-       setServoPosition(pwm_R, 6, 85);      // E1
-       setServoPosition(pwm_L, 15, 90);     // C1
-       //// 
-       setServoPosition(pwm_R, 15, 80);     // D1
-       setServoPosition(pwm_L, 6, 85);      // B1
-       setServoPosition(pwm_R, 2, 100);     // F1
+      setServoPosition(pwm_L, 5, 90);     // B2
+      setServoPosition(pwm_L, 4,80);     // B3
+          
+      setServoPosition(pwm_R, 14, 80);     // D2
+      setServoPosition(pwm_R, 13, 80);     // D3
+    
+      setServoPosition(pwm_R, 1, 80);      // F2
+      setServoPosition(pwm_R, 0, 80);       // F3
+     delay(t);
+  
+ }
+  
 
-        delay(300);  
+     for ( int i= 100 , j=80; j<=100 , i>= 80; j++ ,i--)
+    {
+                   setServoPosition(pwm_L, 2, i);      // A1
+                   setServoPosition(pwm_L, 15, i);     // C1
+                   setServoPosition(pwm_R, 6, j);      // E1
+                   
+                   setServoPosition(pwm_L, 6, j);      // B1
+                   setServoPosition(pwm_R, 15, i);     // D1
+                   setServoPosition(pwm_R, 2, i);     // F1]
+                   delay(t);
+                 
+    }
 
-       setServoPosition(pwm_L, 1, 105);     // A2
-       setServoPosition(pwm_R, 5, 60);      // E2
-       setServoPosition(pwm_L, 14, 120);    // C2
-       ////
-       setServoPosition(pwm_L, 0, 160);     // A3
-       setServoPosition(pwm_R, 4, 5);       // E3
-       setServoPosition(pwm_L, 13, 185);    // C3
 
-        delay(1000);
+    for ( f=130; f>=80;f--)
+ {
+      setServoPosition(pwm_L, 1, f);     // A2
+      setServoPosition(pwm_L, 0, f);     // A3
+  
+      setServoPosition(pwm_L, 14, f);    // C2
+      setServoPosition(pwm_L, 13, f);    // C3
+  
+      setServoPosition(pwm_R, 5, f);      // E2
+      setServoPosition(pwm_R, 4, f);       // E3
 
-       //////////////////////////////////////////////////////////
 
-       setServoPosition(pwm_R, 14, 65);     // D2
-       setServoPosition(pwm_L, 5, 120);     // B2
-       setServoPosition(pwm_L, 5, 120);     // B2
-       ////
-       setServoPosition(pwm_R, 13, 25);     // D3
-       setServoPosition(pwm_L, 4, 170);     // B3
-       setServoPosition(pwm_R, 0, 0);       // F3
+      setServoPosition(pwm_L, 5, 80);     // B2
+      setServoPosition(pwm_L, 4,80);     // B3
+          
+      setServoPosition(pwm_R, 14, 80);     // D2
+      setServoPosition(pwm_R, 13, 80);     // D3
+    
+      setServoPosition(pwm_R, 1, 80);      // F2
+      setServoPosition(pwm_R, 0, 80);       // F3
+     delay(t);
 
-        delay(300);
+ }
 
-       setServoPosition(pwm_R, 15, 80);     // D1
-       setServoPosition(pwm_L, 6, 85);      // B1
-       setServoPosition(pwm_R, 2, 100);     // F1
-       ////
-       setServoPosition(pwm_L, 2, 90);      // A1
-       setServoPosition(pwm_R, 6, 85);      // E1
-       setServoPosition(pwm_L, 15, 90);     // C1
 
-        delay(300);
-       setServoPosition(pwm_R, 14, 65);     // D2
-       setServoPosition(pwm_L, 5, 120);     // B2
-       setServoPosition(pwm_L, 5, 120);     // B2
-       ////
-       setServoPosition(pwm_R, 13, 25);     // D3
-       setServoPosition(pwm_L, 4, 170);     // B3
-       setServoPosition(pwm_R, 0, 0);       // F3
+ 
+    for ( f=80; f<=120;f++)
+ {
+      setServoPosition(pwm_L, 1, 80);     // A2
+      setServoPosition(pwm_L, 0, 80);     // A3
+  
+      setServoPosition(pwm_L, 14, 80);    // C2
+      setServoPosition(pwm_L, 13, 80);    // C3
+  
+      setServoPosition(pwm_R, 5, 80);      // E2
+      setServoPosition(pwm_R, 4, 80);       // E3
 
-        delay(1000);
+      setServoPosition(pwm_L, 5, f);     // B2
+      setServoPosition(pwm_L, 4,f);     // B3
+          
+      setServoPosition(pwm_R, 14, f);     // D2
+      setServoPosition(pwm_R, 13, f);     // D3
+    
+      setServoPosition(pwm_R, 1, f);      // F2
+      setServoPosition(pwm_R, 0, f);       // F3
+      delay(t);
+  
+ }
+   
+      for ( int i= 80 , j=100; j>=80 , i<= 100; j-- ,i++)
+    {
+                   setServoPosition(pwm_L, 2, i);      // A1
+                   setServoPosition(pwm_L, 15, i);     // C1
+                   setServoPosition(pwm_R, 6, j);      // E1
+                   
+                   setServoPosition(pwm_L, 6, j);      // B1
+                   setServoPosition(pwm_R, 15, i);     // D1
+                   setServoPosition(pwm_R, 2, i);     // F1
+                   delay(t);
+    }
 
+ for ( f=120; f>=80;f--)
+ {
+      setServoPosition(pwm_L, 1, 80);     // A2
+      setServoPosition(pwm_L, 0, 80);     // A3
+
+      setServoPosition(pwm_L, 14, 80);    // C2
+      setServoPosition(pwm_L, 13, 80);    // C3
+  
+      setServoPosition(pwm_R, 5, 80);      // E2
+      setServoPosition(pwm_R, 4, 80);       // E3
+      
+
+      setServoPosition(pwm_L, 5, f);     // B2
+      setServoPosition(pwm_L, 4, f);     // B3
+          
+      setServoPosition(pwm_R, 14, f);     // D2
+      setServoPosition(pwm_R, 13, f);     // D3
+    
+      setServoPosition(pwm_R, 1, f);      // F2
+      setServoPosition(pwm_R, 0, f);       // F3
+      delay(t);
+  
+ }
+ 
 }
 
 void setServoPosition(Adafruit_PWMServoDriver &pwm, int channel, int angle) 
