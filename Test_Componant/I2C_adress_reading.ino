@@ -1,44 +1,54 @@
 #include <Wire.h>
 
+#define WIRE Wire
+
 void setup() 
 {
-  Serial.begin(115200); // Start serial communication
-  Wire.begin();         // Initialize I2C bus
+  WIRE.begin();
+
+  Serial.begin(9600);
+  while (!Serial)
+     delay(10);
   Serial.println("\nI2C Scanner");
 }
 
-void loop() 
-{
+void loop() {
+  byte error, address;
+  int nDevices;
+
   Serial.println("Scanning...");
 
-  int count = 0;
-
-  // Loop through possible I2C addresses
-  for (byte address = 1; address < 127; address++) 
+  nDevices = 0;
+  for(address = 1; address < 127; address++ )
   {
-    Wire.beginTransmission(address);
-    byte error = Wire.endTransmission();
+    // The i2c_scanner uses the return value of
+    // the Write.endTransmisstion to see if
+    // a device did acknowledge to the address.
+    WIRE.beginTransmission(address);
+    error = WIRE.endTransmission();
 
-    if (error == 0) {
+    if (error == 0)
+    {
       Serial.print("I2C device found at address 0x");
-      Serial.print(address < 16 ? "0" : ""); // Leading zero for single-digit hex
-      Serial.print(address, HEX);
+      if (address<16)
+        Serial.print("0");
+      Serial.print(address,HEX);
       Serial.println("  !");
-      count++;
-    } 
-    else if (error == 4) 
+
+      nDevices++;
+    }
+    else if (error==4)
     {
       Serial.print("Unknown error at address 0x");
-      Serial.print(address < 16 ? "0" : ""); // Leading zero for single-digit hex
-      Serial.println(address, HEX);
+      if (address<16)
+        Serial.print("0");
+      Serial.println(address,HEX);
     }
-
-    delay(10); // Short delay for stability
   }
+  if (nDevices == 0)
+    Serial.println("No I2C devices found\n");
+  else
+    Serial.println("done\n");
 
-  Serial.print(count == 0 ? "No I2C devices found" : "Found ");
-  Serial.print(count);
-  Serial.println(" I2C device(s).");
-
-  delay(5000); // Wait before the next scan
+  delay(5000);           // wait 5 seconds for next scan
 }
