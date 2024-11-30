@@ -4,7 +4,7 @@ using bfs::SbusRx;    // Bring SbusRx into the current scope
 using bfs::SbusData;  // Bring SbusData into the current scope
 
 // Define your RX and TX pins
-const int8_t RX_PIN = 16; // Replace with your actual RX pin
+const int8_t RX_PIN = 15; // Replace with your actual RX pin
 
 
 /* SBUS object for reading SBUS */
@@ -92,9 +92,9 @@ Adafruit_PWMServoDriver pwm_L = Adafruit_PWMServoDriver(0x42);
 
 ////////////////////////////////
 
-const int ledPinB = 4;
-const int ledPinR = 25;
-const int ledPinG = 2;
+const int ledPinB = 45;
+const int ledPinR = 21;
+const int ledPinG = 47;
 
 
 void setup()

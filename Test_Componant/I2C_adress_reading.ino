@@ -1,7 +1,6 @@
 #include <Wire.h>
 
 #define WIRE Wire
-
 void setup() 
 {
   WIRE.begin();
