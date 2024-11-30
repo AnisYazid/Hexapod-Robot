@@ -118,17 +118,17 @@ void setup()
     pinMode(ledPinB, OUTPUT);
     pinMode(ledPinR, OUTPUT);
     pinMode(ledPinG, OUTPUT);
-    pinMode(26, OUTPUT); 
+    pinMode(20, OUTPUT); 
    
     digitalWrite(ledPinB, LOW);
     digitalWrite(ledPinR, HIGH);
     digitalWrite(ledPinG, LOW);
 
-    tone (26, 600); 
+    tone (20, 600); 
     delay(200);
-    tone (26, 1000);
+    tone (20, 1000);
     delay(200);
-    noTone(26);
+    noTone(20);
     delay(3000);
 }
 
